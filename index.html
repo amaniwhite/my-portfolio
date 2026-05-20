@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Engineer Portfolio | Amani White</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tight">Portfolio<span class="text-indigo-600">.ai</span></span>
+            <div class="space-x-8 hidden md:flex font-medium text-slate-600">
+                <a href="#about" class="hover:text-indigo-600 transition">About</a>
+                <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+                <a href="#resume" class="hover:text-indigo-600 transition">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-indigo-600 uppercase bg-indigo-50 rounded-full">
+                Available for new opportunities
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Hi, I'm <span class="gradient-text">Amani White</span>
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+                Machine Learning Engineer specializing in building scalable AI systems and deep learning models. I turn complex data into actionable intelligence.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/amaniwhite" class="bg-slate-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-slate-800 transition flex items-center">
+                    <i class="fab fa-github mr-2"></i> GitHub
+                </a>
+                <a href="#resume" class="bg-white border border-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition flex items-center">
+                    <i class="fas fa-file-download mr-2"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-indigo-600 mr-4"></span> About Me
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg text-slate-600 leading-relaxed">
+                    <p class="mb-6">
+                        I am a Machine Learning Engineer with a background in [Computer Science/Math/Physics]. I focus on the intersection of data engineering and model deployment (MLOps).
+                    </p>
+                    <p>
+                        Current focus: **Large Language Models (LLMs)** and efficiency in inference. When I'm not training models, you'll find me contributing to open-source or writing about AI on my blog.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-indigo-600 mb-2">Frameworks</h4>
+                        <p class="text-sm text-slate-500 text-slate-600">PyTorch, TensorFlow, Scikit-learn</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-indigo-600 mb-2">Cloud/Ops</h4>
+                        <p class="text-sm text-slate-500 text-slate-600">AWS, Docker, Kubernetes, MLFlow</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-indigo-600 mb-2">Languages</h4>
+                        <p class="text-sm text-slate-500 text-slate-600">Python, C++, SQL, R</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-indigo-600 mb-2">Data</h4>
+                        <p class="text-sm text-slate-500 text-slate-600">Pandas, Spark, PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-indigo-600 mr-4"></span> Featured Projects
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                         <i class="fas fa-brain text-5xl text-indigo-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">PyTorch</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">NLP</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Sentiment Analysis Engine</h3>
+                        <p class="text-slate-600 mb-4 text-sm">A real-time sentiment analysis tool built with BERT, achieving 94% accuracy on financial news datasets.</p>
+                        <div class="flex gap-4 text-sm font-bold">
+                            <a href="#" class="text-indigo-600 hover:underline">Code <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                         <i class="fas fa-network-wired text-5xl text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">Docker</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">MLOps</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Model Deployment Pipeline</h3>
+                        <p class="text-slate-600 mb-4 text-sm">CI/CD pipeline for automated model testing and deployment using GitHub Actions and AWS SageMaker.</p>
+                        <div class="flex gap-4 text-sm font-bold">
+                            <a href="#" class="text-indigo-600 hover:underline">Code <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-white">Ready to dive deeper?</h2>
+            <p class="text-slate-400 mb-10 max-w-xl mx-auto">Download my full resume for a detailed look at my experience, certifications, and academic background.</p>
+            
+            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 inline-block">
+                <i class="far fa-file-pdf text-5xl mb-4 text-indigo-400"></i>
+                <h3 class="text-xl font-bold mb-4">Curriculum Vitae</h3>
+                <!-- Replace 'resume.pdf' with your actual file link -->
+                <a href="resume.pdf" download class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg transition">
+                    Download CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200 text-center text-slate-500 text-sm">
+        <p>&copy; 2023 Amani White. Built with precision and Python.</p>
+    </footer>
+
+</body>
+</html>
