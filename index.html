@@ -17,150 +17,343 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .serif-heading {
+            font-family: Georgia, serif;
+        }
+
         .gradient-text {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
+            background: linear-gradient(90deg, #708090, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Grid pattern background from inspo code */
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(112, 128, 144, 0.05) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(112, 128, 144, 0.05) 1px, transparent 1px);
+            background-size: 55px 55px;
+        }
+
+        /* Global Scroll Reveal Animation Styles */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Progressive Skill Bar Animation */
+        .skill-progress-bar {
+            width: 0%;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-[#0c0a09] text-stone-300 antialiased selection:bg-[#708090]/30 selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <nav class="fixed w-full z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-[#292524] transition-all">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold tracking-tight">Portfolio<span class="text-indigo-600">.ai</span></span>
-            <div class="space-x-8 hidden md:flex font-medium text-slate-600">
-                <a href="#about" class="hover:text-indigo-600 transition">About</a>
-                <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
-                <a href="#resume" class="hover:text-indigo-600 transition">Resume</a>
+            <span class="serif-heading text-xl font-black text-white tracking-tight"><span class="text-[#708090]">AW</span>Portfolio<span class="text-[#708090]">.</span></span>
+            <div class="space-x-8 hidden md:flex font-medium text-stone-400 text-sm tracking-wider uppercase">
+                <a href="#about" class="hover:text-[#708090] transition duration-200">About</a>
+                <a href="#skills" class="hover:text-[#708090] transition duration-200">Skills</a>
+                <a href="#projects" class="hover:text-[#708090] transition duration-200">Projects</a>
+                <a href="#resume" class="hover:text-[#708090] transition duration-200">Resume</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-32 pb-16 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <!-- <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-indigo-600 uppercase bg-indigo-50 rounded-full">
-                Available for new opportunities
-            </div> -->
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                Hi, I'm <span class="gradient-text">Amani White</span>
-            </h1>
-            <div class="flex justify-center mb-10">
-                <img src="./assets/amaniwhite_profile_photo.jpg" alt="Amani White" class="w-80 h-80 rounded-full object-cover shadow-md border-4 border-white">
-            </div>
-            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-                Aspiring Machine Learning Engineer specialising in building scalable AI systems and deep learning models. Aiming to turn complex data into actionable intelligence.
+    <header class="relative pt-40 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center justify-center">
+        <div class="absolute inset-0 grid-bg opacity-40"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none bg-[radial-gradient(circle,rgba(112,128,144,0.06)_0%,transparent_70%)]"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto text-center scroll-reveal">
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-4">
+                Aspiring Machine Learning Engineer
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://github.com/amaniwhite" class="bg-slate-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-slate-800 transition flex items-center">
-                    <i class="fab fa-github mr-2"></i> GitHub
+            
+            <h1 class="serif-heading text-5xl md:text-7xl font-black mb-8 tracking-tight text-white leading-none">
+                Amani<br class="md:hidden"> 
+                <span class="text-transparent" style="-webkit-text-stroke: 1.5px rgb(255, 255, 255);">White</span>
+            </h1>
+
+            <div class="flex justify-center mb-10">
+                <div class="p-1 rounded-full border-2 border-[#708090]/40 bg-gradient-to-tr from-[#292524] to-[#1c1917]">
+                    <img src="./assets/amaniwhite_profile_photo.jpg" alt="Amani White" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl">
+                </div>
+            </div>
+
+            <p class="text-base md:text-lg text-stone-400 max-w-xl mx-auto mb-10 leading-relaxed">
+                Specialising in building scalable AI systems and deep learning models. Aiming to turn complex data into <span class="text-[#708090] font-semibold">actionable intelligence</span>.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-bold tracking-wider uppercase">
+                <a href="https://github.com/amaniwhite" class="bg-[#708090] text-stone-950 px-8 py-3.5 rounded-xl hover:bg-[#8292a1] transform hover:scale-[1.02] transition duration-200 flex items-center shadow-lg shadow-[#708090]/10">
+                    <i class="fab fa-github mr-2 text-sm"></i> GitHub
                 </a>
-                <a href="#resume" class="bg-white border border-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 transition flex items-center">
-                    <i class="fas fa-file-download mr-2"></i> Download CV
+                <a href="#resume" class="bg-transparent border border-[#292524] text-stone-400 px-8 py-3.5 rounded-xl hover:border-[#708090]/50 hover:text-white transition duration-200 flex items-center">
+                    <i class="fas fa-file-download mr-2 text-sm"></i> Download CV
                 </a>
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 flex items-center">
-                <span class="w-8 h-1 bg-indigo-600 mr-4"></span> About Me
-            </h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-lg text-slate-600 leading-relaxed">
-                    <p class="mb-6">
-                        I am currently a Data Analyst, specialising in Reporting and Data Visualisation. I have a strong interest in transitioning into becoming a Machine Learning Engineer.
-                    </p>
-                    <p>
-                        Current focus: **Large Language Models (LLMs)** and efficiency in inference. When I'm not training models, you'll find me contributing to open-source or writing about AI on my blog.
-                    </p>
+    <section id="about" class="py-28 bg-[#0e0c0b] border-t border-[#1c1917]">
+        <div class="max-w-5xl mx-auto px-6 scroll-reveal">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">About Me</p>
+                    <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
+                        Models built with<br><span class="text-[#708090]">rigour & efficiency.</span>
+                    </h2>
+                    <div class="text-stone-400 leading-relaxed space-y-4 text-sm md:text-base">
+                        <p>
+                            My favourite quote is from Les Brown: <span class="text-[#708090] italic">"Shoot for the moon; even if you miss, you'll land among the stars."</span> This perfectly captures my approach in everything I do - I always aim high, even if the odds are against me. I believe that with enough dedication and hard work, anything is possible.</p>
+                        <p>
+                            I am currently a Data Analyst, specialising in Reporting and Data Visualisation. Driven by an intense curiosity about the future of AI and Technology, I am transitioning into becoming a Machine Learning Engineer.
+                        </p>
+                        <p>
+                            Current focus: <span class="text-white font-medium">Machine Learning Engineering</span>. When I'm not developing my skills and training models, you'll find me going for a run or exploring some city.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-indigo-600 mb-2">Frameworks</h4>
-                        <p class="text-sm text-slate-500 text-slate-600">PyTorch, TensorFlow, Scikit-learn</p>
+                    <div class="p-6 bg-[#111110] rounded-2xl border border-[#292524] hover:border-[#708090]/30 transition duration-300">
+                        <p class="text-[10px] font-bold text-[#708090] tracking-widest uppercase mb-2">Frameworks</p>
+                        <p class="text-sm font-medium text-white">Scikit-learn</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-indigo-600 mb-2">Cloud/Ops</h4>
-                        <p class="text-sm text-slate-500 text-slate-600">AWS</p>
+                    <div class="p-6 bg-[#111110] rounded-2xl border border-[#292524] hover:border-[#708090]/30 transition duration-300">
+                        <p class="text-[10px] font-bold text-[#708090] tracking-widest uppercase mb-2">Cloud/Ops</p>
+                        <p class="text-sm font-medium text-white">Azure</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-indigo-600 mb-2">Languages</h4>
-                        <p class="text-sm text-slate-500 text-slate-600">Python, SQL</p>
+                    <div class="p-6 bg-[#111110] rounded-2xl border border-[#292524] hover:border-[#708090]/30 transition duration-300">
+                        <p class="text-[10px] font-bold text-[#708090] tracking-widest uppercase mb-2">Languages</p>
+                        <p class="text-sm font-medium text-white">Python, SQL, Clickhouse SQL</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                        <h4 class="font-bold text-indigo-600 mb-2">Data</h4>
-                        <p class="text-sm text-slate-500 text-slate-600">Pandas, NumPy, PostgreSQL</p>
+                    <div class="p-6 bg-[#111110] rounded-2xl border border-[#292524] hover:border-[#708090]/30 transition duration-300">
+                        <p class="text-[10px] font-bold text-[#708090] tracking-widest uppercase mb-2">Data</p>
+                        <p class="text-sm font-medium text-white">Pandas, NumPy</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section (Added above Featured Projects as requested) -->
+    <section id="skills" class="py-24 bg-[#0c0a09] border-t border-[#1c1917]">
+        <div class="max-w-3xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Skills</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Technical Proficiency</h2>
+                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">
+                    I'm always seeking to deepen my expertise and skills in the rapidly evolving field of Data Science/Analysis. Below is a snapshot of my current technical proficiency across key tools and frameworks.
+                </p>
+            </div>
+            
+            <!-- Inspo-card wrapping containing the technical proficiency list -->
+            <div class="bg-[#111110] border border-[#292524] rounded-2xl p-8 md:p-10 shadow-2xl">
+                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#708090] mb-10">Technical Proficiency</p>
+                
+                <div class="space-y-6">
+                    <!-- Python Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">Python</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">75%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="75%"></div>
+                        </div>
+                    </div>
+
+                    <!-- SQL / MySQL Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">SQL</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">83%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="83%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Apache Superset Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">Apache Superset</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">95%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Git Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">Git</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">82%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="82%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Excel Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">Excel</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">50%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="50%"></div>
+                        </div>
+                    </div>
+
+                    <!-- scikit-learn Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">scikit-learn</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">30%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="30%"></div>
+                        </div>
+                    </div>
+
+                    <!-- pandas / NumPy Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">pandas / NumPy</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">67%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="67%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Data Visualization Bar -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2.5">
+                            <span class="text-sm font-medium text-stone-200">Data Visualization</span>
+                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">92%</span>
+                        </div>
+                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
+                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 flex items-center">
-                <span class="w-8 h-1 bg-indigo-600 mr-4"></span> Featured Projects
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8">
+    <section id="projects" class="py-28 bg-[#0e0c0b] border-t border-[#1c1917]">
+        <div class="max-w-5xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Portfolio</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Featured Projects</h2>
+                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">
+                    If you're interested in seeing my work in action, check out these featured projects that showcase my skills and expertise.
+                </p>
+                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">   
+                    There is more coming soon! 🙂
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
                 
                 <!-- Project 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
-                         <i class="fas fa-brain text-5xl text-indigo-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">PyTorch</span>
-                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">NLP</span>
+                <div class="group bg-[#111110] rounded-2xl overflow-hidden border border-[#292524] hover:border-[#708090]/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-[#708090] bg-[#708090]/10 border border-[#708090]/20 px-3 py-1 rounded-full">
+                                ML
+                            </span>
+                            <span class="text-xs font-bold text-[#708090] bg-[#1c1917] px-3 py-1 rounded-full">
+                                --% Accuracy
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Sentiment Analysis Engine</h3>
-                        <p class="text-slate-600 mb-4 text-sm">A real-time sentiment analysis tool built with BERT, achieving 94% accuracy on financial news datasets.</p>
-                        <div class="flex gap-4 text-sm font-bold">
-                            <a href="#" class="text-indigo-600 hover:underline">Code <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
-                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                        <h3 class="serif-heading text-xl font-bold text-white mb-3 group-hover:text-[#708090] transition duration-200">
+                            Project is WIP - Stay Tuned!
+                        </h3>
+                        <p class="text-stone-400 mb-6 text-sm leading-relaxed">
+                            I'm currently working on this project and will update it soon!
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0 flex gap-4 items-center">
+                        <div class="flex gap-2 text-xs font-bold text-stone-500">
+                            <span class="bg-[#1c1917] border border-[#292524] px-2 py-1 rounded">Python</span>
+                        </div>
+                        <div class="ml-auto flex gap-4 text-xs font-bold uppercase tracking-wider">
+                            <a href="https://github.com/amaniwhite/e2e-ML-workflow" class="text-[#708090] hover:text-white transition">Code <i class="fas fa-external-link-alt ml-1 text-[10px]"></i></a>
+                            <a href="https://github.com/amaniwhite/e2e-ML-workflow" class="text-[#708090] hover:text-white transition">Demo</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="h-48 bg-purple-100 flex items-center justify-center">
-                         <i class="fas fa-network-wired text-5xl text-purple-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">Docker</span>
-                            <span class="text-xs font-bold px-2 py-1 bg-slate-100 rounded text-slate-600">MLOps</span>
+                <!-- <div class="group bg-[#111110] rounded-2xl overflow-hidden border border-[#292524] hover:border-[#708090]/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-[#708090] bg-[#708090]/10 border border-[#708090]/20 px-3 py-1 rounded-full">
+                                ML
+                            </span>
+                            <span class="text-xs font-bold text-[#708090] bg-[#1c1917] px-3 py-1 rounded-full">
+                                Constructing
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Model Deployment Pipeline</h3>
-                        <p class="text-slate-600 mb-4 text-sm">CI/CD pipeline for automated model testing and deployment using GitHub Actions and AWS SageMaker.</p>
-                        <div class="flex gap-4 text-sm font-bold">
-                            <a href="#" class="text-indigo-600 hover:underline">Code <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        <h3 class="serif-heading text-xl font-bold text-white mb-3 group-hover:text-[#708090] transition duration-200">
+                            Project is WIP - Stay Tuned!
+                        </h3>
+                        <p class="text-stone-400 mb-6 text-sm leading-relaxed">
+                            I'm currently working on this project and will update it soon!
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0 flex gap-4 items-center">
+                        <div class="flex gap-2 text-xs font-bold text-stone-500">
+                            <span class="bg-[#1c1917] border border-[#292524] px-2 py-1 rounded">Docker</span>
+                        </div>
+                        <div class="ml-auto flex gap-4 text-xs font-bold uppercase tracking-wider">
+                            <a href="#" class="text-[#708090] hover:text-white transition">Code <i class="fas fa-external-link-alt ml-1 text-[10px]"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-white">Want to see my CV?</h2>
-            <p class="text-slate-400 mb-10 max-w-xl mx-auto">Download my full resume for a detailed look at my experience, certifications, and academic background.</p>
+    <section id="resume" class="py-24 bg-[#0c0a09] border-t border-[#1c1917]">
+        <div class="max-w-3xl mx-auto px-6 text-center scroll-reveal">
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Background</p>
+            <h2 class="serif-heading text-3xl font-bold mb-6 text-white">Want to see my CV?</h2>
+            <p class="text-stone-400 mb-10 text-sm max-w-md mx-auto leading-relaxed">
+                Download my full resume for a detailed look at my specific engineering background, practical data frameworks, and certifications.
+            </p>
             
-            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 inline-block">
-                <i class="far fa-file-pdf text-5xl mb-4 text-indigo-400"></i>
-                <h3 class="text-xl font-bold mb-4">Curriculum Vitae</h3>
-                <!-- Replace 'resume.pdf' with your actual file link -->
-                <a href="Amani White's CV.pdf" download class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg transition">
+            <div class="bg-[#111110] p-8 md:p-10 rounded-2xl border border-[#292524] inline-block min-w-[280px]">
+                <i class="far fa-file-pdf text-4xl mb-4 text-[#708090]/80"></i>
+                <h3 class="serif-heading text-lg font-bold mb-6 text-white">Curriculum Vitae</h3>
+                <a href="Amani-White's-CV.pdf" download class="inline-block bg-[#708090] hover:bg-[#8292a1] text-stone-950 text-xs font-bold tracking-wider uppercase py-3.5 px-8 rounded-xl transition duration-200 shadow-md">
                     Download CV (PDF)
                 </a>
             </div>
@@ -168,9 +361,49 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 border-t border-slate-200 text-center text-slate-500 text-sm">
+    <footer class="py-12 border-t border-[#1c1917] bg-[#0c0a09] text-center text-stone-600 text-xs tracking-wide">
         <p>&copy; 2026 Amani White. Built with precision and Python.</p>
     </footer>
 
+    <!-- Scroll Animations Script Engine -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. Intersection Observer for Sections Reveal Effect
+            const revealOptions = {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        
+                        // If this visible section contains skill progress bars, trigger them
+                        const progressBars = entry.target.querySelectorAll(".skill-progress-bar");
+                        if (progressBars.length > 0) {
+                            progressBars.forEach(bar => {
+                                const targetWidth = bar.getAttribute("data-target");
+                                bar.style.width = targetWidth;
+                            });
+                        }
+                        // Stop observing once animated into view
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            // Apply intersection observer to elements
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+            revealElements.forEach(el => revealObserver.observe(el));
+            
+            // Immediate trigger for elements high up on primary load (Hero section)
+            setTimeout(() => {
+                const heroReveal = document.querySelector("header .scroll-reveal");
+                if (heroReveal) heroReveal.classList.add("visible");
+            }, 150);
+        });
+    </script>
 </body>
 </html>
