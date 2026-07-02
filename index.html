@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -34,15 +34,13 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Grid pattern background from inspo code */
         .grid-bg {
-            background-image: 
-                linear-gradient(rgba(112, 128, 144, 0.05) 1px, transparent 1px), 
+            background-image:
+                linear-gradient(rgba(112, 128, 144, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(112, 128, 144, 0.05) 1px, transparent 1px);
             background-size: 55px 55px;
         }
 
-        /* Global Scroll Reveal Animation Styles */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -54,10 +52,38 @@
             transform: translateY(0);
         }
 
-        /* Progressive Skill Bar Animation */
         .skill-progress-bar {
             width: 0%;
             transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-marker {
+            position: absolute;
+            top: -2px;
+            width: 14px;
+            height: 14px;
+            background: #708090;
+            border: 2px solid #0c0a09;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #708090, #292524);
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
         }
     </style>
 </head>
@@ -69,15 +95,17 @@
             <span class="serif-heading text-xl font-black text-white tracking-tight"><span class="text-[#708090]">AW</span>Portfolio<span class="text-[#708090]">.</span></span>
             <div class="space-x-8 hidden md:flex font-medium text-stone-400 text-sm tracking-wider uppercase">
                 <a href="#about" class="hover:text-[#708090] transition duration-200">About</a>
+                <a href="#timeline" class="hover:text-[#708090] transition duration-200">Journey</a>
                 <a href="#skills" class="hover:text-[#708090] transition duration-200">Skills</a>
                 <a href="#projects" class="hover:text-[#708090] transition duration-200">Projects</a>
+                <a href="#certifications" class="hover:text-[#708090] transition duration-200">Certs</a>
                 <a href="#resume" class="hover:text-[#708090] transition duration-200">Resume</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-40 pb-24 px-6 overflow-hidden min-h-[90vh] flex items-center justify-center">
+    <header class="relative pt-40 pb-16 px-6 overflow-hidden min-h-[85vh] flex items-center justify-center">
         <div class="absolute inset-0 grid-bg opacity-40"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none bg-[radial-gradient(circle,rgba(112,128,144,0.06)_0%,transparent_70%)]"></div>
 
@@ -85,9 +113,9 @@
             <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-4">
                 Aspiring Machine Learning Engineer
             </p>
-            
+
             <h1 class="serif-heading text-5xl md:text-7xl font-black mb-8 tracking-tight text-white leading-none">
-                Amani<br class="md:hidden"> 
+                Amani<br class="md:hidden">
                 <span class="text-transparent" style="-webkit-text-stroke: 1.5px rgb(255, 255, 255);">White</span>
             </h1>
 
@@ -98,7 +126,7 @@
             </div>
 
             <p class="text-base md:text-lg text-stone-400 max-w-xl mx-auto mb-10 leading-relaxed">
-                Specialising in Reporting but developing ability to build scalable ML/AI systems and deep learning models. Aiming to turn complex data into <span class="text-[#708090] font-semibold">actionable intelligence</span>.
+                Data Analyst specialising in reporting, analytics and visualisation. Currently building expertise in <span class="text-[#708090] font-semibold">machine learning</span>, AI systems and predictive modelling.
             </p>
 
             <div class="flex flex-wrap justify-center gap-4 text-xs font-bold tracking-wider uppercase">
@@ -113,7 +141,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-28 bg-[#0e0c0b] border-t border-[#1c1917]">
+    <section id="about" class="py-20 bg-[#0e0c0b] border-t border-[#1c1917]">
         <div class="max-w-5xl mx-auto px-6 scroll-reveal">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
@@ -121,9 +149,10 @@
                     <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
                         Models built with<br><span class="text-[#708090]">rigour & efficiency.</span>
                     </h2>
-                    <div class="text-stone-400 leading-relaxed space-y-4 text-sm md:text-base">
+                    <div class="text-[#b0b0b0] leading-relaxed space-y-4 text-sm md:text-base">
                         <p>
-                            My favourite quote is from Les Brown: <span class="text-[#708090] italic">"Shoot for the moon; even if you miss, you'll land among the stars."</span> This perfectly captures my approach in everything I do - I always aim high, even if the odds are against me. I believe that with enough dedication and hard work, anything is possible.</p>
+                            After years of turning raw data into dashboards, reports and actionable insights, I started asking: what if the data could make the decisions itself? That curiosity is what pulled me into machine learning.
+                        </p>
                         <p>
                             I am currently a Data Analyst, specialising in Reporting and Data Visualisation. Driven by an intense curiosity about the future of AI and Technology, I am transitioning into becoming a Machine Learning Engineer.
                         </p>
@@ -155,107 +184,281 @@
         </div>
     </section>
 
-    <!-- Skills Section (Added above Featured Projects as requested) -->
-    <section id="skills" class="py-24 bg-[#0c0a09] border-t border-[#1c1917]">
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-[#0c0a09] border-t border-[#1c1917]">
+        <div class="max-w-3xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">My Journey</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">The Road to ML Engineering</h2>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-line"></div>
+
+                <!-- 2022-2023 -->
+                <div class="relative flex md:justify-start mb-12">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                        <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300">
+                            <span class="text-xs font-bold text-[#708090] tracking-wider">2022 - 2023</span>
+                            <h3 class="serif-heading text-lg font-bold text-white mt-1">Data Analytics Foundations</h3>
+                            <p class="text-[#b0b0b0] text-sm mt-2">Started the Google Data Analytics Professional course in Dec 2022. Landed my first data role at XCM in Mar 2023.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 md:left-1/2 top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                    <div class="absolute left-[20px] top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 md:hidden"></div>
+                </div>
+
+                <!-- 2023-2026 -->
+                <div class="relative flex md:justify-end mb-12">
+                    <div class="md:w-1/2 md:pl-12 pl-12 md:text-left">
+                        <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300">
+                            <span class="text-xs font-bold text-[#708090] tracking-wider">2023 - 2026</span>
+                            <h3 class="serif-heading text-lg font-bold text-white mt-1">Data Analyst</h3>
+                            <p class="text-[#b0b0b0] text-sm mt-2">Building expertise in reporting, data visualisation and analytics. Working with Python, SQL and BI tools day to day.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 md:left-1/2 top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                    <div class="absolute left-[20px] top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 md:hidden"></div>
+                </div>
+
+                <!-- Apr-Jun 2026 -->
+                <div class="relative flex md:justify-start mb-12">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                        <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300">
+                            <span class="text-xs font-bold text-[#708090] tracking-wider">Apr - Jun 2026</span>
+                            <h3 class="serif-heading text-lg font-bold text-white mt-1">Machine Learning Training</h3>
+                            <p class="text-[#b0b0b0] text-sm mt-2">Completed the Codecademy ML Engineer path. Deep-dived into ML fundamentals, statistical modelling and scikit-learn.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 md:left-1/2 top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                    <div class="absolute left-[20px] top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 md:hidden"></div>
+                </div>
+
+                <!-- Now -->
+                <div class="relative flex md:justify-end mb-12">
+                    <div class="md:w-1/2 md:pl-12 pl-12 md:text-left">
+                        <div class="bg-[#111110] border border-[#708090]/40 rounded-2xl p-6 shadow-lg shadow-[#708090]/5">
+                            <span class="text-xs font-bold text-[#708090] tracking-wider">Now</span>
+                            <h3 class="serif-heading text-lg font-bold text-white mt-1">Building ML Projects</h3>
+                            <p class="text-[#b0b0b0] text-sm mt-2">Practising and applying ML skills to real-world projects, building an end-to-end portfolio.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 md:left-1/2 top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 ring-4 ring-[#708090]/20 hidden md:block"></div>
+                    <div class="absolute left-[20px] top-6 w-4 h-4 bg-[#708090] border-2 border-[#0c0a09] rounded-full -translate-x-1/2 z-10 ring-4 ring-[#708090]/20 md:hidden"></div>
+                </div>
+
+                <!-- Future -->
+                <div class="relative flex md:justify-end">
+                    <div class="md:w-1/2 md:pl-12 pl-12 md:text-left">
+                        <div class="bg-[#111110] border border-[#292524] border-dashed rounded-2xl p-6">
+                            <span class="text-xs font-bold text-[#708090] tracking-wider">Future</span>
+                            <h3 class="serif-heading text-lg font-bold text-white mt-1">Machine Learning Engineer</h3>
+                            <p class="text-[#b0b0b0] text-sm mt-2">Designing and deploying scalable ML/AI systems that turn complex data into actionable intelligence.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 md:left-1/2 top-6 w-4 h-4 border-2 border-[#708090] bg-[#0c0a09] rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                    <div class="absolute left-[20px] top-6 w-4 h-4 border-2 border-[#708090] bg-[#0c0a09] rounded-full -translate-x-1/2 z-10 md:hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#0e0c0b] border-t border-[#1c1917]">
         <div class="max-w-3xl mx-auto px-6 scroll-reveal">
             <div class="text-center mb-16">
                 <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Skills</p>
                 <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Technical Proficiency</h2>
-                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">
-                    I'm always seeking to deepen my expertise and skills in the rapidly evolving field of Data Science/Analysis. Below is a snapshot of my current technical proficiency across key tools and frameworks.
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
+                    A snapshot of my current technical proficiency across key tools and frameworks.
                 </p>
             </div>
-            
-            <!-- Inspo-card wrapping containing the technical proficiency list -->
+
             <div class="bg-[#111110] border border-[#292524] rounded-2xl p-8 md:p-10 shadow-2xl">
                 <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#708090] mb-10">Technical Proficiency</p>
-                
-                <div class="space-y-6">
-                    <!-- Python Bar -->
+
+                <div class="space-y-8">
+                    <!-- Python — Early Advanced (68%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">Python</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">75%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="75%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="68%"></div>
+                                <div class="skill-marker" data-pos="68%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SQL / MySQL Bar -->
+                    <!-- SQL — Solid Advanced (82%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">SQL</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">83%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="83%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="82%"></div>
+                                <div class="skill-marker" data-pos="82%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Apache Superset Bar -->
+                    <!-- Apache Superset — Advanced (92%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">Apache Superset</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">95%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="95%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="92%"></div>
+                                <div class="skill-marker" data-pos="92%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Git Bar -->
+                    <!-- Git — Advanced (80%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">Git</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">82%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="82%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="80%"></div>
+                                <div class="skill-marker" data-pos="80%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Excel Bar -->
+                    <!-- Excel — Intermediate (50%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">Excel</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">50%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="50%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="50%"></div>
+                                <div class="skill-marker" data-pos="50%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- scikit-learn Bar -->
+                    <!-- scikit-learn — Early Intermediate (38%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">scikit-learn</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">30%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="30%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="38%"></div>
+                                <div class="skill-marker" data-pos="38%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- pandas / NumPy Bar -->
+                    <!-- pandas / NumPy — Late Intermediate (62%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">pandas / NumPy</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">67%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="67%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="62%"></div>
+                                <div class="skill-marker" data-pos="62%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Data Visualization Bar -->
+                    <!-- Data Visualization — Advanced (90%) -->
                     <div>
-                        <div class="flex justify-between items-center mb-2.5">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-sm font-medium text-stone-200">Data Visualization</span>
-                            <span class="text-[11px] font-bold text-[#708090] bg-[#708090]/10 px-2.5 py-0.5 rounded-md">92%</span>
                         </div>
-                        <div class="h-[5px] bg-[#292524] rounded-full overflow-hidden">
-                            <div class="skill-progress-bar h-full bg-[#708090] rounded-full" data-target="92%"></div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="90%"></div>
+                                <div class="skill-marker" data-pos="90%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -265,21 +468,21 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-28 bg-[#0e0c0b] border-t border-[#1c1917]">
+    <section id="projects" class="py-20 bg-[#0c0a09] border-t border-[#1c1917]">
         <div class="max-w-5xl mx-auto px-6 scroll-reveal">
             <div class="text-center mb-16">
                 <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Portfolio</p>
                 <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Featured Projects</h2>
-                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
                     If you're interested in seeing my work in action, check out these featured projects that showcase my skills and expertise.
                 </p>
-                <p class="text-stone-500 max-w-md mx-auto text-sm leading-relaxed">   
-                    There is more coming soon! 🙂
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed mt-1">
+                    There is more coming soon!
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-                
+
                 <!-- Project 1 -->
                 <div class="group bg-[#111110] rounded-2xl overflow-hidden border border-[#292524] hover:border-[#708090]/30 transition-all duration-300 flex flex-col justify-between">
                     <div class="p-8">
@@ -294,7 +497,7 @@
                         <h3 class="serif-heading text-xl font-bold text-white mb-3 group-hover:text-[#708090] transition duration-200">
                             Project is WIP - Stay Tuned!
                         </h3>
-                        <p class="text-stone-400 mb-6 text-sm leading-relaxed">
+                        <p class="text-[#b0b0b0] mb-6 text-sm leading-relaxed">
                             I'm currently working on this project and will update it soon!
                         </p>
                     </div>
@@ -309,47 +512,68 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <!-- <div class="group bg-[#111110] rounded-2xl overflow-hidden border border-[#292524] hover:border-[#708090]/30 transition-all duration-300 flex flex-col justify-between">
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-[#708090] bg-[#708090]/10 border border-[#708090]/20 px-3 py-1 rounded-full">
-                                ML
-                            </span>
-                            <span class="text-xs font-bold text-[#708090] bg-[#1c1917] px-3 py-1 rounded-full">
-                                Constructing
-                            </span>
-                        </div>
-                        <h3 class="serif-heading text-xl font-bold text-white mb-3 group-hover:text-[#708090] transition duration-200">
-                            Project is WIP - Stay Tuned!
-                        </h3>
-                        <p class="text-stone-400 mb-6 text-sm leading-relaxed">
-                            I'm currently working on this project and will update it soon!
-                        </p>
-                    </div>
-                    <div class="px-8 pb-8 pt-0 flex gap-4 items-center">
-                        <div class="flex gap-2 text-xs font-bold text-stone-500">
-                            <span class="bg-[#1c1917] border border-[#292524] px-2 py-1 rounded">Docker</span>
-                        </div>
-                        <div class="ml-auto flex gap-4 text-xs font-bold uppercase tracking-wider">
-                            <a href="#" class="text-[#708090] hover:text-white transition">Code <i class="fas fa-external-link-alt ml-1 text-[10px]"></i></a>
-                        </div>
-                    </div>
-                </div> -->
+            </div>
+        </div>
+    </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-[#0e0c0b] border-t border-[#1c1917]">
+        <div class="max-w-3xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Credentials</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Certifications</h2>
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
+                    Courses and certifications I've completed on my journey into machine learning.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Certificate 1 -->
+                <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#708090]/10 border border-[#708090]/20 flex items-center justify-center">
+                            <i class="fas fa-certificate text-[#708090]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Intro to Machine Learning</h3>
+                            <p class="text-[10px] font-bold text-[#708090] tracking-wider uppercase">Kaggle</p>
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] text-sm mb-4 flex-1">Foundations of machine learning including model building, validation, and core ML concepts.</p>
+                    <a href="./assets/certificates/Amani White - Intro to Machine Learning.png" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#708090] hover:text-white transition inline-flex items-center gap-1">
+                        View Certificate <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#708090]/10 border border-[#708090]/20 flex items-center justify-center">
+                            <i class="fas fa-certificate text-[#708090]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Machine Learning Engineer Path</h3>
+                            <p class="text-[10px] font-bold text-[#708090] tracking-wider uppercase">Codecademy</p>
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] text-sm mb-4 flex-1">Comprehensive ML engineering path covering data pipelines, model training, and deployment.</p>
+                    <a href="./assets/certificates/amani_white_MLE_codecademy.pdf" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#708090] hover:text-white transition inline-flex items-center gap-1">
+                        View Certificate <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="py-24 bg-[#0c0a09] border-t border-[#1c1917]">
+    <section id="resume" class="py-20 bg-[#0c0a09] border-t border-[#1c1917]">
         <div class="max-w-3xl mx-auto px-6 text-center scroll-reveal">
             <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Background</p>
             <h2 class="serif-heading text-3xl font-bold mb-6 text-white">Want to see my CV?</h2>
-            <p class="text-stone-400 mb-10 text-sm max-w-md mx-auto leading-relaxed">
+            <p class="text-[#b0b0b0] mb-10 text-sm max-w-md mx-auto leading-relaxed">
                 Download my full resume for a detailed look at my specific engineering background, practical data frameworks, and certifications.
             </p>
-            
+
             <div class="bg-[#111110] p-8 md:p-10 rounded-2xl border border-[#292524] inline-block min-w-[280px]">
                 <i class="far fa-file-pdf text-4xl mb-4 text-[#708090]/80"></i>
                 <h3 class="serif-heading text-lg font-bold mb-6 text-white">Curriculum Vitae</h3>
@@ -361,15 +585,29 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-[#1c1917] bg-[#0c0a09] text-center text-stone-600 text-xs tracking-wide">
-        <p>&copy; 2026 Amani White. Built with precision and Python.</p>
+    <footer class="py-12 border-t border-[#1c1917] bg-[#0c0a09]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-stone-600 text-xs tracking-wide">&copy; 2026 Amani White. Built with precision and Python.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/amaniwhite" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="GitHub">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amani-white" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="mailto:amani.g.white19@gmail.com" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="Email">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Scroll Animations Script Engine -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            
-            // 1. Intersection Observer for Sections Reveal Effect
+
             const revealOptions = {
                 threshold: 0.12,
                 rootMargin: "0px 0px -40px 0px"
@@ -379,8 +617,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
-                        
-                        // If this visible section contains skill progress bars, trigger them
+
                         const progressBars = entry.target.querySelectorAll(".skill-progress-bar");
                         if (progressBars.length > 0) {
                             progressBars.forEach(bar => {
@@ -388,17 +625,23 @@
                                 bar.style.width = targetWidth;
                             });
                         }
-                        // Stop observing once animated into view
+
+                        const markers = entry.target.querySelectorAll(".skill-marker");
+                        if (markers.length > 0) {
+                            markers.forEach(marker => {
+                                const pos = marker.getAttribute("data-pos");
+                                marker.style.left = pos;
+                            });
+                        }
+
                         observer.unobserve(entry.target);
                     }
                 });
             }, revealOptions);
 
-            // Apply intersection observer to elements
             const revealElements = document.querySelectorAll(".scroll-reveal");
             revealElements.forEach(el => revealObserver.observe(el));
-            
-            // Immediate trigger for elements high up on primary load (Hero section)
+
             setTimeout(() => {
                 const heroReveal = document.querySelector("header .scroll-reveal");
                 if (heroReveal) heroReveal.classList.add("visible");
