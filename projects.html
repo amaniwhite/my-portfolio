@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97T2X1S3YD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-97T2X1S3YD');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Amani White</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .serif-heading {
+            font-family: Georgia, serif;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#0c0a09] text-stone-300 antialiased selection:bg-[#708090]/30 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-[#292524] transition-all">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="serif-heading text-xl font-black text-white tracking-tight"><span class="text-[#708090]">AW</span>Portfolio<span class="text-[#708090]">.</span></a>
+            <div class="space-x-8 hidden md:flex font-medium text-stone-400 text-sm tracking-wider uppercase">
+                <a href="index.html#about" class="hover:text-[#708090] transition duration-200">About</a>
+                <a href="index.html#timeline" class="hover:text-[#708090] transition duration-200">Journey</a>
+                <a href="skills.html" class="hover:text-[#708090] transition duration-200">Skills</a>
+                <a href="projects.html" class="text-[#708090] transition duration-200">Projects</a>
+                <a href="resume.html" class="hover:text-[#708090] transition duration-200">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="pt-28 pb-20 bg-[#0c0a09]">
+        <div class="max-w-5xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Portfolio</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Featured Projects</h2>
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
+                    If you're interested in seeing my work in action, check out these featured projects that showcase my skills and expertise.
+                </p>
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed mt-1">
+                    There is more coming soon!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Project 1 -->
+                <div class="group bg-[#111110] rounded-2xl overflow-hidden border border-[#292524] hover:border-[#708090]/30 transition-all duration-300 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-[#708090] bg-[#708090]/10 border border-[#708090]/20 px-3 py-1 rounded-full">
+                                ML
+                            </span>
+                            <span class="text-xs font-bold text-[#708090] bg-[#1c1917] px-3 py-1 rounded-full">
+                                --% Accuracy
+                            </span>
+                        </div>
+                        <h3 class="serif-heading text-xl font-bold text-white mb-3 group-hover:text-[#708090] transition duration-200">
+                            Project is WIP - Stay Tuned!
+                        </h3>
+                        <p class="text-[#b0b0b0] mb-6 text-sm leading-relaxed">
+                            I'm currently working on this project and will update it soon!
+                        </p>
+                    </div>
+                    <div class="px-8 pb-8 pt-0 flex gap-4 items-center">
+                        <div class="flex gap-2 text-xs font-bold text-stone-500">
+                            <span class="bg-[#1c1917] border border-[#292524] px-2 py-1 rounded">Python</span>
+                        </div>
+                        <div class="ml-auto flex gap-4 text-xs font-bold uppercase tracking-wider">
+                            <a href="https://github.com/amaniwhite/e2e-ML-workflow" class="text-[#708090] hover:text-white transition">Code <i class="fas fa-external-link-alt ml-1 text-[10px]"></i></a>
+                            <a href="https://github.com/amaniwhite/e2e-ML-workflow" class="text-[#708090] hover:text-white transition">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-[#1c1917] bg-[#0c0a09]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-stone-600 text-xs tracking-wide">&copy; 2026 Amani White. Built with precision and Python.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/amaniwhite" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="GitHub">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amani-white" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="mailto:amani.g.white19@gmail.com" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="Email">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animations Script Engine -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const revealOptions = {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>

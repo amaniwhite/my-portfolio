@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97T2X1S3YD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-97T2X1S3YD');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Certifications | Amani White</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .serif-heading {
+            font-family: Georgia, serif;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-progress-bar {
+            width: 0%;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-marker {
+            position: absolute;
+            top: -2px;
+            width: 14px;
+            height: 14px;
+            background: #708090;
+            border: 2px solid #0c0a09;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-[#0c0a09] text-stone-300 antialiased selection:bg-[#708090]/30 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0c0a09]/90 backdrop-blur-md border-b border-[#292524] transition-all">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="serif-heading text-xl font-black text-white tracking-tight"><span class="text-[#708090]">AW</span>Portfolio<span class="text-[#708090]">.</span></a>
+            <div class="space-x-8 hidden md:flex font-medium text-stone-400 text-sm tracking-wider uppercase">
+                <a href="index.html#about" class="hover:text-[#708090] transition duration-200">About</a>
+                <a href="index.html#timeline" class="hover:text-[#708090] transition duration-200">Journey</a>
+                <a href="skills.html" class="text-[#708090] transition duration-200">Skills</a>
+                <a href="projects.html" class="hover:text-[#708090] transition duration-200">Projects</a>
+                <a href="resume.html" class="hover:text-[#708090] transition duration-200">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Skills Section -->
+    <section id="skills" class="pt-28 pb-20 bg-[#0c0a09]">
+        <div class="max-w-3xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Skills</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Technical Proficiency</h2>
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
+                    A snapshot of my current technical proficiency across key tools and frameworks.
+                </p>
+            </div>
+
+            <div class="bg-[#111110] border border-[#292524] rounded-2xl p-8 md:p-10 shadow-2xl">
+                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#708090] mb-10">Technical Proficiency</p>
+
+                <div class="space-y-8">
+                    <!-- Python -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">Python</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="68%"></div>
+                                <div class="skill-marker" data-pos="68%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQL -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">SQL</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="82%"></div>
+                                <div class="skill-marker" data-pos="82%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apache Superset -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">Apache Superset</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="92%"></div>
+                                <div class="skill-marker" data-pos="92%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">Git</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="80%"></div>
+                                <div class="skill-marker" data-pos="80%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Excel -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">Excel</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="50%"></div>
+                                <div class="skill-marker" data-pos="50%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- scikit-learn -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">scikit-learn</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="38%"></div>
+                                <div class="skill-marker" data-pos="38%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- pandas / NumPy -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">pandas / NumPy</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="62%"></div>
+                                <div class="skill-marker" data-pos="62%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-medium text-stone-200">Data Visualization</span>
+                        </div>
+                        <div class="relative">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                                <span>Beginner</span>
+                                <span>Intermediate</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="relative h-[6px] bg-[#292524] rounded-full overflow-visible">
+                                <div class="skill-progress-bar h-full bg-[#708090]/40 rounded-full" data-target="90%"></div>
+                                <div class="skill-marker" data-pos="90%" style="left: 0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                                <div class="w-px h-2 bg-stone-600"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-[#0e0c0b] border-t border-[#1c1917]">
+        <div class="max-w-3xl mx-auto px-6 scroll-reveal">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#708090] mb-3">Credentials</p>
+                <h2 class="serif-heading text-3xl md:text-4xl font-black text-white mb-4">Certifications</h2>
+                <p class="text-[#b0b0b0] max-w-md mx-auto text-sm leading-relaxed">
+                    Courses and certifications I've completed on my journey into machine learning.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Certificate 1 -->
+                <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#708090]/10 border border-[#708090]/20 flex items-center justify-center">
+                            <i class="fas fa-certificate text-[#708090]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Intro to Machine Learning</h3>
+                            <p class="text-[10px] font-bold text-[#708090] tracking-wider uppercase">Kaggle</p>
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] text-sm mb-4 flex-1">Foundations of machine learning including model building, validation, and core ML concepts.</p>
+                    <a href="./assets/certificates/Amani White - Intro to Machine Learning.png" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#708090] hover:text-white transition inline-flex items-center gap-1">
+                        View Certificate <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-[#111110] border border-[#292524] rounded-2xl p-6 hover:border-[#708090]/30 transition duration-300 flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#708090]/10 border border-[#708090]/20 flex items-center justify-center">
+                            <i class="fas fa-certificate text-[#708090]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Machine Learning Engineer Path</h3>
+                            <p class="text-[10px] font-bold text-[#708090] tracking-wider uppercase">Codecademy</p>
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] text-sm mb-4 flex-1">Comprehensive ML engineering path covering data pipelines, model training, and deployment.</p>
+                    <a href="./assets/certificates/amani_white_MLE_codecademy.pdf" target="_blank" class="text-xs font-bold uppercase tracking-wider text-[#708090] hover:text-white transition inline-flex items-center gap-1">
+                        View Certificate <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-[#1c1917] bg-[#0c0a09]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-stone-600 text-xs tracking-wide">&copy; 2026 Amani White. Built with precision and Python.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/amaniwhite" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="GitHub">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amani-white" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="mailto:amani.g.white19@gmail.com" class="text-stone-500 hover:text-[#708090] transition text-sm" aria-label="Email">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animations Script Engine -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const revealOptions = {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+
+                        const progressBars = entry.target.querySelectorAll(".skill-progress-bar");
+                        if (progressBars.length > 0) {
+                            progressBars.forEach(bar => {
+                                const targetWidth = bar.getAttribute("data-target");
+                                bar.style.width = targetWidth;
+                            });
+                        }
+
+                        const markers = entry.target.querySelectorAll(".skill-marker");
+                        if (markers.length > 0) {
+                            markers.forEach(marker => {
+                                const pos = marker.getAttribute("data-pos");
+                                marker.style.left = pos;
+                            });
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
